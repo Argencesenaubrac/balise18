@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>QCM - Croix</title>
+
+<style>
+body {
+    margin: 0;
+    min-height: 100vh; /* important */
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(180deg, #a8c6d8, #eaf4f4);
+    text-align: center;
+    color: #2f3e4e;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Texte narratif */
+.story {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #5a6b7a;
+}
+
+/* Question */
+h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Boutons réponses */
+.choice {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    background: #2f3e4e;
+    color: white;
+    transition: 0.3s;
+}
+
+.choice:hover {
+    background: #1f2a35;
+}
+
+/* Messages */
+.success, .error {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.success {
+    background: #dff5e1;
+    border-left: 5px solid #2e7d32;
+}
+
+.error {
+    background: #fde2e2;
+    border-left: 5px solid #c62828;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <!-- 🧠 Phrase ajoutée -->
+        <p class="story">
+            Sur son chemin, Garence croise un ancien repère…
+		</p>
+
+        <h1>
+        Quel est-il ?
+        </h1>
+
+        <button class="choice" onclick="wrongAnswer()">Une décoration</button>
+        <button class="choice" onclick="wrongAnswer()">Une repère religieux et de chemin</button>
+        <button class="choice" onclick="correctAnswer()">Un signal routier</button>
+
+        <div id="success" class="success">
+            ✅ Bonne réponse !<br>
+	La croix était un repère religieux placé le long des chemins pour guider les voyageurs.
+        </div>
+
+        <div id="error" class="error">
+            ❌ Mauvaise réponse… Essaie encore !
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function correctAnswer() {
+    document.getElementById("success").style.display = "block";
+    document.getElementById("error").style.display = "none";
+}
+
+function wrongAnswer() {
+    document.getElementById("error").style.display = "block";
+    document.getElementById("success").style.display = "none";
+}
+</script>
+
+</body>
+</html>
